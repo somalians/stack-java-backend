@@ -16,8 +16,12 @@ public class PessoaController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/pessoa")
-    public Pessoa pessoa(@RequestParam(value="nome", defaultValue="World") String nome) {
-        return new Pessoa(counter.incrementAndGet(), nome);
+    public Pessoa pessoa(@RequestParam(value="nome", defaultValue="Mundo Novo") String nome) {
+        return new Pessoa(counter.incrementAndGet(), getAlgumaCoisa());
+    }
+
+    public String getAlgumaCoisa(){
+        return "Novo metodo";
     }
 
 }

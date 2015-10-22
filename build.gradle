@@ -1,34 +1,58 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.6.RELEASE")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.2.7.RELEASE"
+        classpath 'org.springframework:springloaded:1.2.4.RELEASE'
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = 'backend.Bootstrap'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+configurations { springLoaded }
 
 jar {
     baseName = 'stack-java-backend'
     version =  '0.0.1'
 }
 
-repositories {
-    mavenCentral()
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    springLoaded 'org.springframework:springloaded:1.2.4.RELEASE'
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("junit:junit")
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
+}
+
+bootRun {
+
+    def springLoadedFile = configurations.springLoaded.find
+            { it.name == "springloaded-1.2.4.RELEASE.jar" }
+
+    systemProperty 'server.port', '8084'
+    jvmArgs "-javaagent:$springLoadedFile", "-noverify"
+    main = 'backend.Bootstrap'
 }
