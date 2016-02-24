@@ -1,23 +1,37 @@
 package backend.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by adrianobrito on 14/10/15.
  */
+@Entity
 public class Pessoa {
 
-    private final long id;
-    private final String nome;
+    @Id private Long id;
+    private String nome;
+
+    public Pessoa(){}
 
     public Pessoa(long id, String nome) {
         this.id = id;
         this.nome = nome;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

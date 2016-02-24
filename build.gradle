@@ -15,8 +15,7 @@ apply plugin: 'spring-boot'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
-mainClassName = 'backend.Bootstrap'
+mainClassName = 'backend.Deploy'
 
 repositories {
     jcenter()
@@ -32,8 +31,15 @@ jar {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
-    compile 'org.codehaus.groovy:groovy-all:2.4.4'
-    springLoaded 'org.springframework:springloaded:1.2.4.RELEASE'
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+    compile "org.springframework.boot:spring-boot-starter-test"
+    compile "org.codehaus.groovy:groovy-all:2.4.4"
+    compile "org.springframework.data:spring-data-jpa:1.9.4.RELEASE"
+    compile "postgresql:postgresql:9.1-901.jdbc4"
+    compile "org.flywaydb:flyway-core"
+    testCompile "com.jayway.restassured:rest-assured:2.8.0"
+    testCompile "junit:junit:4.11"
+    springLoaded "org.springframework:springloaded:1.2.4.RELEASE"
 }
 
 idea {
@@ -54,5 +60,5 @@ bootRun {
 
     systemProperty 'server.port', '8084'
     jvmArgs "-javaagent:$springLoadedFile", "-noverify"
-    main = 'backend.Bootstrap'
+    main = 'backend.Deploy'
 }

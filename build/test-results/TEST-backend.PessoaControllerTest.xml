@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="backend.PessoaControllerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-02-24T15:47:52" hostname="D-FOR-GEO-06" time="1.292">
+  <properties/>
+  <testcase name="shouldSavePessoa" classname="backend.PessoaControllerTest" time="1.126"/>
+  <testcase name="shouldGetPessoa" classname="backend.PessoaControllerTest" time="0.065"/>
+  <testcase name="shouldUpdatePessoa" classname="backend.PessoaControllerTest" time="0.054"/>
+  <testcase name="shouldDeletePessoa" classname="backend.PessoaControllerTest" time="0.044"/>
+  <system-out><![CDATA[2016-02-24 12:47:51.055  INFO 18676 --- [    Test worker] o.s.t.c.web.WebTestContextBootstrapper   : Using TestExecutionListeners: [org.springframework.boot.test.IntegrationTestPropertiesListener@2dfd5e9, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7ae3bed4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@276543c1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@28e8f3c8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@54641ba1]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.2.7.RELEASE)
+
+2016-02-24 12:47:51.077  INFO 18676 --- [    Test worker] backend.PessoaControllerTest             : Starting PessoaControllerTest on D-FOR-GEO-06 with PID 18676 (/home/adrianobrito/env/github/stack-java-backend/build/classes/test started by adrianobrito in /home/adrianobrito/env/github/stack-java-backend)
+2016-02-24 12:47:51.078  INFO 18676 --- [    Test worker] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@71ea7284: startup date [Wed Feb 24 12:47:51 BRT 2016]; root of context hierarchy
+2016-02-24 12:47:51.263  INFO 18676 --- [    Test worker] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2016-02-24 12:47:51.354  INFO 18676 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ccf39e29] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-02-24 12:47:51.355  INFO 18676 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-02-24 12:47:51.356  INFO 18676 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-02-24 12:47:51.356  INFO 18676 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2016-02-24 12:47:51.479  INFO 18676 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 0 (http)
+2016-02-24 12:47:51.608  INFO 18676 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2016-02-24 12:47:51.609  INFO 18676 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.28
+2016-02-24 12:47:51.672  INFO 18676 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2016-02-24 12:47:51.672  INFO 18676 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 594 ms
+2016-02-24 12:47:51.790  INFO 18676 --- [ost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2016-02-24 12:47:51.793  INFO 18676 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2016-02-24 12:47:51.793  INFO 18676 --- [ost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2016-02-24 12:47:51.867  INFO 18676 --- [    Test worker] o.f.c.i.dbsupport.DbSupportFactory       : Database: jdbc:postgresql://localhost:5432/stack (PostgreSQL 9.1)
+2016-02-24 12:47:51.874  INFO 18676 --- [    Test worker] o.f.core.internal.command.DbValidate     : Validated 1 migration (execution time 00:00.005s)
+2016-02-24 12:47:51.882  INFO 18676 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 1
+2016-02-24 12:47:51.892  INFO 18676 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2016-02-24 12:47:51.930  INFO 18676 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2016-02-24 12:47:51.930  INFO 18676 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-02-24 12:47:51.960  INFO 18676 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2016-02-24 12:47:51.961  INFO 18676 --- [    Test worker] o.h.e.jdbc.internal.LobCreatorBuilder    : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-02-24 12:47:51.962  INFO 18676 --- [    Test worker] o.h.h.i.ast.ASTQueryTranslatorFactory    : HHH000397: Using ASTQueryTranslatorFactory
+2016-02-24 12:47:51.968  WARN 18676 --- [    Test worker] o.h.j.i.EntityManagerFactoryRegistry     : HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+2016-02-24 12:47:52.075  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@71ea7284: startup date [Wed Feb 24 12:47:51 BRT 2016]; root of context hierarchy
+2016-02-24 12:47:52.107  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/pessoas/{id}],methods=[GET]}" onto public backend.model.Pessoa backend.controller.PessoaController.findById(java.lang.Long)
+2016-02-24 12:47:52.107  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/pessoas/{id}],methods=[DELETE]}" onto public void backend.controller.PessoaController.remove(java.lang.Long)
+2016-02-24 12:47:52.107  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/pessoas/{pessoa.id}],methods=[PUT]}" onto public backend.model.Pessoa backend.controller.PessoaController.update(backend.model.Pessoa)
+2016-02-24 12:47:52.107  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/pessoas],methods=[POST]}" onto public backend.model.Pessoa backend.controller.PessoaController.save(backend.model.Pessoa)
+2016-02-24 12:47:52.108  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2016-02-24 12:47:52.108  INFO 18676 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2016-02-24 12:47:52.124  INFO 18676 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-02-24 12:47:52.124  INFO 18676 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-02-24 12:47:52.143  INFO 18676 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2016-02-24 12:47:52.209  INFO 18676 --- [    Test worker] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 59463 (http)
+2016-02-24 12:47:52.210  INFO 18676 --- [    Test worker] backend.PessoaControllerTest             : Started PessoaControllerTest in 1.149 seconds (JVM running for 4.143)
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: delete from pessoa where id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+2016-02-24 12:47:52.751  INFO 18676 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2016-02-24 12:47:52.751  INFO 18676 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2016-02-24 12:47:52.762  INFO 18676 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: update pessoa set nome=? where id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: insert into pessoa (nome, id) values (?, ?)
+Hibernate: select pessoa0_.id as id1_0_0_, pessoa0_.nome as nome2_0_0_ from pessoa pessoa0_ where pessoa0_.id=?
+Hibernate: delete from pessoa where id=?
+Hibernate: select pessoa0_.id as id1_0_, pessoa0_.nome as nome2_0_ from pessoa pessoa0_
+Hibernate: delete from pessoa where id=?
+Hibernate: delete from pessoa where id=?
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
